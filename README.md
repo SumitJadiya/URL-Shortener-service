@@ -2,6 +2,7 @@
 
 <p>Create a URL-Shortner service using any language of your choice. The service should be able to shorten a URL and return a shortened URL. The shortened URL should be able to redirect to the original URL. </p>
 <br />
+
 #### Tasks:
 
 1. Create a System Design Document for the App.
@@ -21,7 +22,7 @@
 
 #### To start with this app please follow below steps:
 
-1. clone this app using command <i>git@github.com:SumitJadiya/URL-Shortner-service.git</i>.
+1. clone this app using command <i>git@github.com:SumitJadiya/URL-Shortener-service.git</i>.
 2. run "npm install" to install dependencies.
 3. Setup mongo in local and then create a file .env in the main(same directory having readme) folder, this file will have the contents: <br/>
     - SERVER_PORT = <your_server_port>
