@@ -2,14 +2,14 @@
 
 #### Tasks:
 
--   [ ] Create a System Design Document for the App.
--   [ ] The REST API should be able to create a shortened URL.
--   [ ] The REST API should be able to redirect to the original URL.
--   [ ] Dockerize the application.
--   [ ] Provision an EKS cluster on AWS using Terraform.
--   [ ] Deploy the REST-API on EKS.
--   [ ] Create a CI/CD pipeline for the application using Github Actions.
--   [ ] The pipeline should be able to deploy the application on EKS continuously when a new commit is pushed to the main branch.
+- [ ] Create a System Design Document for the App.
+- [x] The REST API should be able to create a shortened URL.
+- [x] The REST API should be able to redirect to the original URL.
+- [ ] Dockerize the application.
+- [ ] Provision an EKS cluster on AWS using Terraform.
+- [ ] Deploy the REST-API on EKS.
+- [ ] Create a CI/CD pipeline for the application using Github Actions.
+- [ ] The pipeline should be able to deploy the application on EKS continuously when a new commit is pushed to the main branch.
 
 #### Technology used:
 
