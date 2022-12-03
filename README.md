@@ -1,18 +1,15 @@
 # Getting Started with URL Shortener App (Backend)
 
-<p>Create a URL-Shortner service using any language of your choice. The service should be able to shorten a URL and return a shortened URL. The shortened URL should be able to redirect to the original URL. </p>
-<br />
-
 #### Tasks:
 
-1. Create a System Design Document for the App.
-2. The REST API should be able to create a shortened URL.
-3. The REST API should be able to redirect to the original URL.
-4. Dockerize the application.
-5. Provision an EKS cluster on AWS using Terraform.
-6. Deploy the REST-API on EKS.
-7. Create a CI/CD pipeline for the application using Github Actions.
-8. The pipeline should be able to deploy the application on EKS continuously when a new commit is pushed to the main branch.
+-   [ ] Create a System Design Document for the App.
+-   [ ] The REST API should be able to create a shortened URL.
+-   [ ] The REST API should be able to redirect to the original URL.
+-   [ ] Dockerize the application.
+-   [ ] Provision an EKS cluster on AWS using Terraform.
+-   [ ] Deploy the REST-API on EKS.
+-   [ ] Create a CI/CD pipeline for the application using Github Actions.
+-   [ ] The pipeline should be able to deploy the application on EKS continuously when a new commit is pushed to the main branch.
 
 #### Technology used:
 
