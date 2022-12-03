@@ -20,11 +20,10 @@
 1. NodeJS
 2. Express (to write backend APIs)
 3. Mongo Database
-4. Mocha-Chai for testcases
 
 #### To start with this app please follow below steps:
 
-1. clone this app using command <i>git@github.com:SumitJadiya/URL_shortner_node_backend.git</i>.
+1. clone this app using command <i>git@github.com:SumitJadiya/URL-Shortner-service.git</i>.
 2. run "npm install" to install dependencies.
 3. Setup mongo in local and then create a file .env in the main(same directory having readme) folder, this file will have the contents: <br/>
    - SERVER_PORT = <your_server_port>
@@ -37,7 +36,6 @@
 2. Controllers -> The core logic of encryption/decryption
 3. Routes -> Routes through which FE can access the APIs
 4. config -> Configuration related file (In our case, mongo database connection details)
-5. test -> Test related files
 
 ### Algorithm used for Encryption/Decryption
 
