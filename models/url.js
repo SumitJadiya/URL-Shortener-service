@@ -1,20 +1,23 @@
 const mongoose = require('mongoose')
-const db = require('../config/database');
+const db = require('../config/database')
 
-const URL = new mongoose.Schema({
-    longUrl: {
-        type: String,
-        required: true,
-        unique: true,
-        index: true 
+const URL = new mongoose.Schema(
+    {
+        longUrl: {
+            type: String,
+            required: true,
+            unique: true,
+            index: true
+        },
+        shortUrl: {
+            type: String,
+            unique: true,
+            index: true
+        }
     },
-    shortUrl: {
-        type: String,
-        unique: true,
-        index: true 
+    {
+        timestamps: true
     }
-}, {
-    timestamps: true
-});
+)
 
-module.exports = mongoose.model('URL', URL);
+module.exports = mongoose.model('URL', URL)

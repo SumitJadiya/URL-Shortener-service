@@ -13,8 +13,6 @@
 7. Create a CI/CD pipeline for the application using Github Actions.
 8. The pipeline should be able to deploy the application on EKS continuously when a new commit is pushed to the main branch.
 
-<br />
-
 #### Technology used:
 
 1. NodeJS
@@ -26,8 +24,8 @@
 1. clone this app using command <i>git@github.com:SumitJadiya/URL-Shortner-service.git</i>.
 2. run "npm install" to install dependencies.
 3. Setup mongo in local and then create a file .env in the main(same directory having readme) folder, this file will have the contents: <br/>
-   - SERVER_PORT = <your_server_port>
-   - DB_URL = '<your_mongo_db_url>'
+    - SERVER_PORT = <your_server_port>
+    - DB_URL = '<your_mongo_db_url>'
 4. once the dependencies are installed, and mongo setup is complete. You're good to work on this repo.
 
 #### PSB the list of folder/files and their uses:
