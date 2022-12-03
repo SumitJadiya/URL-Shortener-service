@@ -1,5 +1,6 @@
 require("dotenv").config();
-const Sequelize = require('sequelize');
+const mongoose = require('mongoose')
+const connectWithDB = require('./config/database')
 
 const cors = require('cors')
 const express = require("express")
@@ -18,12 +19,7 @@ const urlRoutes = require("./routes/url");
 const port = process.env.SERVER_PORT;
 
 // Database
-const db = require('./config/database');
-
-// Test DB
-db.authenticate()
-    .then(() => console.log('Database connected...'))
-    .catch(err => console.log('Error: ' + err))
+connectWithDB()
 
 // APIs
 app.use('/dummy', (req, res) => res.send({ message: "Test is passed" }))

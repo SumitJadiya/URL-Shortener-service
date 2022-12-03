@@ -1,7 +1,7 @@
 const URL = require("../models/url")
 
 // encodes the URL
-exports.encodeUrl = (req, res) => {
+exports.encodeUrl = async (req, res) => {
 
     let longUrl = req.body.longString
     let encodedString = encodeToShortUrl(longUrl)
@@ -9,40 +9,37 @@ exports.encodeUrl = (req, res) => {
     if (!longUrl)
         throwError(res, "Please Enter Correct String")
     else {
-        URL
-            .findOrCreate({
-                where: { longUrl: longUrl },
-                defaults: { shortUrl: encodedString, longUrl: longUrl }
-            }).then((msg) => res.status(200).json(msg))
+        const urlResult = await URL.create({
+                shortUrl: encodedString,
+                longUrl: longUrl
+            });
+            return res.status(200).json({
+                success: true,
+                greeting: `URL shortened!`,
+                urlResult
+              });
     }
 }
 
-// check for custom string
-exports.encodeUrlWithCustomString = (req, res) => {
-
-    let longUrl = req.body.longString
-    let shortUrl = req.body.shortString
-
-    if (!shortUrl)
-        this.encodeUrl(req, res)
-    else if (!longUrl)
-        throwError(res, "Please Enter Correct String")
-    else
-        findShortURL(shortUrl, longUrl, res)
-}
 
 // decodes the URL
-exports.decodeUrl = (req, res) => {
+exports.decodeUrl = async (req, res) => {
 
     let shortUrl = req.params.shortString
 
-    URL.findOne({ where: { shortUrl: shortUrl } })
-        .then(function (result) {
-            let decodedString = result.dataValues.longUrl
-            return res.status(200).json({ decodedString })
-        }).catch(function (error) {
-            throwError(res, error)
-        })
+    const shortenedUrl = await URL.find({shortUrl: shortUrl})
+
+    let decodedString = shortenedUrl[0].longUrl
+
+    return res.status(200).json({ decodedString })
+
+    // URL.findOne({ where: { shortUrl: shortUrl } })
+    //     .then(function (result) {
+    //         let decodedString = result.dataValues.longUrl
+    //         return res.status(200).json({ decodedString })
+    //     }).catch(function (error) {
+    //         throwError(res, error)
+    //     })
 }
 
 // algorithm to encode URL -> 64^9 unique strings
@@ -65,7 +62,7 @@ async function findShortURL(shortUrl, longUrl, res) {
     if (isPresent) return res.status(400).json({ "message": "Short String Already Present!" });
     else {
         URL
-            .findOrCreate({
+            .find({
                 where: { longUrl: longUrl, shortUrl: shortUrl },
                 defaults: { shortUrl: shortUrl, longUrl: longUrl }
             }).then((msg) => res.status(200).json(msg))

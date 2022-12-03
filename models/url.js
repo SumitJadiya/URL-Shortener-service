@@ -1,29 +1,20 @@
-const { Sequelize } = require('sequelize');
+const mongoose = require('mongoose')
 const db = require('../config/database');
 
-const URL = db.define('URL', {
-    id: {
-        primaryKey: true,
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
-        allowNull: false
-    },
+const URL = new mongoose.Schema({
     longUrl: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: String,
+        required: true,
+        unique: true,
+        index: true 
     },
     shortUrl: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: String,
+        unique: true,
+        index: true 
     }
 }, {
     timestamps: true
 });
 
-/* 
-URL.sync().then(() => {
-    console.log('table created');
-});
-*/
-
-module.exports = URL;
+module.exports = mongoose.model('URL', URL);
