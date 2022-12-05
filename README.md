@@ -44,3 +44,4 @@
 1. docker login
 2. docker build -t stj11/url-shortener:0.0.1.RELEASE .
 3. docker push stj11/url-shortener:0.0.1.RELEASE
+4. Once deployed, anyone can pull the image using docker pull stj11/url-shortener
